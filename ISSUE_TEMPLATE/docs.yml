@@ -1,0 +1,24 @@
+name: ドキュメント改善
+description: ドキュメントの追加・修正を提案する
+labels: ["ドキュメント"]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: 対象ドキュメント
+      placeholder: "例: CLAUDE.md, CONCEPT.md, spec/feature/..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 現状の問題
+      description: 何が足りない・誤っているか
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 改善案
