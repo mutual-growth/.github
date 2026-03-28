@@ -1,0 +1,62 @@
+name: バグ報告
+description: 運用中のバグを報告する
+labels: ["バグ"]
+body:
+  - type: textarea
+    id: current
+    attributes:
+      label: 現在の動作
+      description: 何が起きているか
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する動作
+      description: 本来どう動くべきか
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 環境
+      placeholder: |
+        - OS:
+        - ブラウザ:
+        - バージョン:
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 優先度
+      options:
+        - 優先度: 低
+        - 優先度: 中
+        - 優先度: 高
+        - 優先度: 緊急
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 対象パッケージ
+      options:
+        - 対象: dataflow
+        - 対象: widget
+        - 対象: scene
+        - 対象: editor
+        - 対象: datatype
+        - 対象: graph-canvas
+        - 横断的

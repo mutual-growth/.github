@@ -1,0 +1,36 @@
+name: 機能要望
+description: 新機能や改善を提案する
+labels: ["機能"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 解決したい課題
+      description: どんな問題・不便さがあるか
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 提案する解決策
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 検討した代替案
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 対象パッケージ
+      options:
+        - 対象: dataflow
+        - 対象: widget
+        - 対象: scene
+        - 対象: editor
+        - 対象: datatype
+        - 対象: graph-canvas
+        - 横断的
