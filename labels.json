@@ -19,5 +19,5 @@
   {"name": "対象: widget",        "color": "2ea44f", "description": "widget パッケージ"},
   {"name": "対象: scene",         "color": "00b4d8", "description": "scene パッケージ"},
   {"name": "対象: graph-canvas",  "color": "f0883e", "description": "graph-canvas パッケージ"},
-  {"name": "対象: editor",        "color": "da3633", "description": "editor パッケージ"}
+  {"name": "対象: editor",        "color": "5c6bc0", "description": "editor パッケージ"}
 ]
