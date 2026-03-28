@@ -1,0 +1,58 @@
+name: ラベル同期
+
+on:
+  workflow_dispatch:
+    inputs:
+      repos:
+        description: '同期先リポジトリ (カンマ区切り、例: mutual-growth/transmorph,mutual-growth/other)'
+        required: false
+        default: 'mutual-growth/transmorph'
+      delete_extra:
+        description: '設定にないラベルを削除する'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ラベルを同期
+        env:
+          GH_TOKEN: ${{ secrets.SYNC_LABELS_TOKEN }}
+        run: |
+          IFS=',' read -ra REPOS <<< "${{ inputs.repos }}"
+          for REPO in "${REPOS[@]}"; do
+            REPO=$(echo "$REPO" | xargs)  # trim spaces
+            echo "::group::$REPO へ同期"
+
+            # upsert each label
+            jq -c '.[]' labels.json | while IFS= read -r label; do
+              NAME=$(echo "$label" | jq -r '.name')
+              COLOR=$(echo "$label" | jq -r '.color')
+              DESC=$(echo "$label" | jq -r '.description')
+              if gh label create "$NAME" --color "$COLOR" --description "$DESC" --repo "$REPO" 2>/dev/null; then
+                echo "  作成: $NAME"
+              else
+                gh label edit "$NAME" --color "$COLOR" --description "$DESC" --repo "$REPO"
+                echo "  更新: $NAME"
+              fi
+            done
+
+            # delete labels not in config
+            if [ "${{ inputs.delete_extra }}" = "true" ]; then
+              DEFINED=$(jq -r '.[].name' labels.json)
+              gh label list --repo "$REPO" --limit 100 --json name \
+                | jq -r '.[].name' \
+                | while IFS= read -r LABEL; do
+                    if ! echo "$DEFINED" | grep -qxF "$LABEL"; then
+                      gh label delete "$LABEL" --repo "$REPO" --yes
+                      echo "  削除: $LABEL"
+                    fi
+                  done
+            fi
+
+            echo "::endgroup::"
+          done

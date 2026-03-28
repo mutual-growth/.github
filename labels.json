@@ -1,0 +1,23 @@
+[
+  {"name": "バグ",          "color": "d73a4a", "description": "運用中の資産に問題アリ"},
+  {"name": "機能",          "color": "0075ca", "description": "新機能・機能改善"},
+  {"name": "リファクタリング", "color": "c5def5", "description": "コード品質・リファクタリング"},
+  {"name": "テスト",         "color": "bfd4f2", "description": "テスト・品質保証"},
+  {"name": "ドキュメント",    "color": "0075ca", "description": "ドキュメントの加筆修正が必要"},
+  {"name": "メンテナンス",    "color": "ededed", "description": "依存関係更新・ビルド設定・CI/CD"},
+  {"name": "セキュリティ",    "color": "d73a4a", "description": "セキュリティに関する問題"},
+  {"name": "研究・理論",      "color": "d4c5f9", "description": "学術的・理論的改善"},
+  {"name": "質問・疑問",      "color": "d876e3", "description": "より多くの情報が必要"},
+  {"name": "重複",           "color": "cfd3d7", "description": "他のIssueと重複している"},
+  {"name": "無効",           "color": "e4e669", "description": "Issueの内容が偽である"},
+  {"name": "優先度: 緊急",   "color": "b60205", "description": "即座に対処が必要"},
+  {"name": "優先度: 高",     "color": "d93f0b", "description": "次スプリントで対処"},
+  {"name": "優先度: 中",     "color": "fbca04", "description": "中期的に対処"},
+  {"name": "優先度: 低",     "color": "0e8a16", "description": "将来的に対処"},
+  {"name": "対象: dataflow",      "color": "1d76db", "description": "dataflow パッケージ"},
+  {"name": "対象: widget",        "color": "1d76db", "description": "widget パッケージ"},
+  {"name": "対象: scene",         "color": "1d76db", "description": "scene パッケージ"},
+  {"name": "対象: editor",        "color": "1d76db", "description": "editor パッケージ"},
+  {"name": "対象: datatype",      "color": "1d76db", "description": "datatype パッケージ"},
+  {"name": "対象: graph-canvas",  "color": "1d76db", "description": "graph-canvas パッケージ"}
+]
