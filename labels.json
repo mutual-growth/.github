@@ -14,10 +14,10 @@
   {"name": "優先度: 高",     "color": "d93f0b", "description": "次スプリントで対処"},
   {"name": "優先度: 中",     "color": "fbca04", "description": "中期的に対処"},
   {"name": "優先度: 低",     "color": "0e8a16", "description": "将来的に対処"},
-  {"name": "対象: datatype",      "color": "9b8dc4", "description": "datatype パッケージ"},
-  {"name": "対象: dataflow",      "color": "5b8ab8", "description": "dataflow パッケージ"},
-  {"name": "対象: widget",        "color": "5a9e70", "description": "widget パッケージ"},
-  {"name": "対象: scene",         "color": "4aa0b0", "description": "scene パッケージ"},
-  {"name": "対象: graph-canvas",  "color": "b87850", "description": "graph-canvas パッケージ"},
-  {"name": "対象: editor",        "color": "6570b0", "description": "editor パッケージ"}
+  {"name": "対象: datatype",      "color": "c5bce8", "description": "datatype パッケージ"},
+  {"name": "対象: dataflow",      "color": "a8c4de", "description": "dataflow パッケージ"},
+  {"name": "対象: widget",        "color": "a8d4b8", "description": "widget パッケージ"},
+  {"name": "対象: scene",         "color": "9accd8", "description": "scene パッケージ"},
+  {"name": "対象: graph-canvas",  "color": "ddb898", "description": "graph-canvas パッケージ"},
+  {"name": "対象: editor",        "color": "a8aed8", "description": "editor パッケージ"}
 ]
